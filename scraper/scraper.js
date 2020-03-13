@@ -4,7 +4,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 async function searchJobs(i) {
-   const url = await axios.get('https://indeed.com/jobs?q=Web+Developer&l=Atlanta')
+   const url = await axios.get('https://indeed.com/jobs?q=Web+Developer&l=Atlanta&fromage=last')
     // return fetch(`${url}${i}`)
         .then(response =>  response)
         
@@ -25,4 +25,12 @@ async function searchJobs(i) {
         });
         return url;
 };
+
+
+// async function userCity(lat, long){
+//         const currentLocation = `https://geocode.xyz/${lat},${long}?json=1`
+//         await axios.get(currentLocation).then(response => {
+//             console.log(response['city'], response['statename']);
+//         })
+//     }
 module.exports = searchJobs;
